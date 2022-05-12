@@ -1,0 +1,56 @@
+﻿@page
+@model PlayerModel
+@{
+    ViewData["Title"] = "Add Players";
+}
+
+<body onload="myFunction()">
+    <div>
+
+        <h1 class="display-4">Add the Contestents needed</h1>
+
+        <select id="leaderboardselect">
+            <option>  </option>
+
+        </select>
+        <input id="Playertextbox" type="text" />
+        <input id="Playerbutton" type="button" value="Enter" />
+
+
+        <script>
+            Ptextbox = [];
+            Playerbutton.onclick = function () {
+                // Ptextbox = document.getElementById("Playertextbox").value;
+                Ptextbox.push(document.getElementById("Playertextbox").value);
+
+
+                window.alert(Ptextbox + " are the current contestents");
+                sessionStorage.setItem("Ptextbox", JSON.stringify(Ptextbox));
+
+            }
+            function myFunction() {
+               //Adds leaderboard data
+               // window.alert("test1")
+                var x = document.getElementById("leaderboardselect");
+
+                var leaderboardtext = sessionStorage.getItem("leadboard");
+                console.log(leaderboardtext);
+
+                //window.alert("test2")
+
+                var option = document.createElement("option");
+                document.createElement("option");
+                option.text = leaderboardtext;
+
+                x.add(option);
+                //window.alert("test3")
+            }
+
+
+
+            // create an array named after the set values given by the player
+
+        </script>
+
+    </div>
+    </body>

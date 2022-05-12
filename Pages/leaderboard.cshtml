@@ -1,0 +1,31 @@
+﻿@page
+@model leadermodel
+@{
+    ViewData["Title"] = "Add Leaderboard";
+}
+
+<div>
+    <h1 class="display-4">Create Leaderboard</h1>
+    <input id="leadertextbox" type="text" />
+
+    <input id="leaderbutton" type="button" value="Enter" />
+
+
+    <script>
+        var ltextbox;
+        leaderbutton.onclick = function () {
+            ltextbox = document.getElementById("leadertextbox").value;
+
+
+            window.alert(ltextbox + " Value Set");
+            sessionStorage.setItem("leadboard", ltextbox);
+
+        };
+
+
+    </script>
+
+
+
+
+</div>

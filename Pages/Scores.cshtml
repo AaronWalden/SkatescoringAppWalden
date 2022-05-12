@@ -1,0 +1,137 @@
+﻿@page
+@model PlayerModel
+@{
+    ViewData["Title"] = "Add Scores";
+}
+<body onload="myFunction()">
+    <div>
+        <h1 class="display-4">Add Contestents Scores</h1>
+
+        <select id="leaderboardselect">
+            <option></option>
+
+        </select>
+        <select id="FLTselect">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+            <option>E</option>
+            <option>F</option>
+            <option>G</option>
+            <option>H</option>
+            <option>I</option>
+            <option>J</option>
+            <option>K</option>
+            <option>L</option>
+            <option>M</option>
+            <option>N</option>
+            <option>O</option>
+            <option>P</option>
+            <option>Q</option>
+            <option>R</option>
+            <option>S</option>
+            <option>T</option>
+            <option>U</option>
+            <option>V</option>
+            <option>W</option>
+            <option>X</option>
+            <option>Y</option>
+            <option>Z</option>
+        </select>
+        <select id="setSelect">
+            <option>First Set</option>
+            <option>Second Set</option>
+            <option>Third Set</option>
+            <option>Fourth Set</option>
+
+        </select>
+
+        <select id="setRound">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+        </select>
+
+        <select id="PlayerSelect">
+
+
+        </select>
+        <input id="Scoretextbox" type="text" />
+        <input id="Scorebutton" type="button" value="Enter" />
+
+
+        <script>
+          
+           // 'use strict';
+            Scorebutton.onclick = function () {
+       
+                var x = document.getElementById("Scoretextbox").value;
+                var y = document.getElementById("PlayerSelect").value;
+
+                const object = { y : x };
+
+                for (const [key, value] of Object.entries(object)) {
+                    console.log(key, value);
+                    window.alert(y + " has been assigned " + x + " as her score for this round.");
+         
+                }
+
+
+
+            }
+
+            function myFunction() {
+                //Adds leaderboard data
+                // window.alert("test1")
+                var addL = document.getElementById("leaderboardselect");
+
+                var leaderboardtext = sessionStorage.getItem("leadboard");
+                console.log(leaderboardtext);
+
+                //window.alert("test2")
+
+                var option = document.createElement("option");
+                document.createElement("option");
+                option.text = leaderboardtext;
+
+                addL.add(option);
+                //window.alert("test3")
+
+                //Add Player data
+                var addP = document.getElementById("PlayerSelect");
+
+                playertext = JSON.parse(sessionStorage.getItem("Ptextbox"));
+
+                //window.alert("test2")
+                for (var i = 0; i < playertext.length; i++) {
+                    var option2 = document.createElement("option");
+                    option2.text = playertext[i];
+                    addP.add(option2);
+                }
+
+
+            }
+            function setArray(a, b, c) {
+                arrays['Array' + a][b] = c;
+            }
+
+
+
+        </script>
+
+    </div>
+    </body>
